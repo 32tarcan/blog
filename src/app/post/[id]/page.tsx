@@ -5,8 +5,14 @@ import { formatDate } from '../../../utils/date';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-export default function PostPage({ params }: { params: { id: string } }) {
-  const post = getPostById(params.id);
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default async function PostPage({ params }: PageProps) {
+  const post = await getPostById(params.id);
 
   if (!post) {
     notFound();

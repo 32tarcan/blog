@@ -4,8 +4,8 @@ import { getAllPosts } from '../utils/mdx';
 import { formatDate } from '../utils/date';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
-export default function Home() {
-  const posts = getAllPosts();
+export default async function Home() {
+  const posts = await getAllPosts();
 
   return (
     <main className="min-h-screen p-8 max-w-4xl mx-auto">
